@@ -1,0 +1,32 @@
+# Preserve the exact bytes of the selected HiEAF experiment sources.
+# Historical run receipts compare source SHA-256 values.
+/.gitattributes -text
+/__init__.py -text
+/dataloader/__init__.py -text
+/dataloader/collate.py -text
+/dataloader/dataset.py -text
+/dataloader/loader.py -text
+/dataloader/metadata.py -text
+/dataloader/records.py -text
+/datasets/__init__.py -text
+/datasets/frozen.py -text
+/datasets/media.py -text
+/datasets/transforms.py -text
+/evaluation/__init__.py -text
+/evaluation/evaluate.py -text
+/evaluation/metrics.py -text
+/models/__init__.py -text
+/models/aasist.py -text
+/models/hierarchical_score_fusion/__init__.py -text
+/models/hierarchical_score_fusion/hierarchical_checkpoint_loading.py -text
+/models/hierarchical_score_fusion_variation/__init__.py -text
+/models/hierarchical_score_fusion_variation/emotion2vec_seed.py -text
+/models/hsemotion.py -text
+/models/interfaces.py -text
+/models/x3d.py -text
+/utils/__init__.py -text
+/utils/checkpointing.py -text
+/utils/config.py -text
+/utils/gpu_monitor.py -text
+/utils/local_paths.py -text
+/utils/reproducibility.py -text

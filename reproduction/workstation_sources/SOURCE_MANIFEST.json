@@ -1,0 +1,132 @@
+{
+  "format": "hieaf_workstation_source_archive_v1",
+  "purpose": "Byte-preserved source code used to train/evaluate the manuscript artifact checkpoints.",
+  "scope": "Source archive only; existing experiment imports and external bundle paths are unchanged.",
+  "limitations": [
+    "Weights, fixed data/split manifests, environment configurations, vendor dependencies and run receipts are separate assets.",
+    "Runtime source-inventory checks also reference historical files outside this selected code set.",
+    "Recovered FAV trainer sources are available, but the complete original FAV src dependency snapshot is not."
+  ],
+  "files": [
+    {
+      "path": "reproduction/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/windows_loaders.py",
+      "source_bundle": "AVDF1M_X3D_AASIST_Windows_20261102_001",
+      "source_relative_path": "windows_loaders.py",
+      "sha256": "b98e534d2fdf19116296f5c97528a6173314011cba357dfc6d82e6d5ace0cfbd",
+      "bytes": 3817,
+      "role": "External runtime loader + original BN diagnostic S7"
+    },
+    {
+      "path": "reproduction/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/x3d_bn_audit/__init__.py",
+      "source_bundle": "AVDF1M_X3D_AASIST_Windows_20261102_001",
+      "source_relative_path": "x3d_bn_audit_20261102_001/code/x3d_bn_audit/__init__.py",
+      "sha256": "53132f05a1c40ffc6927f6fc3158e2ec9ae552d6a57fdf9ba54e5a227f0b5027",
+      "bytes": 73,
+      "role": "External runtime loader + original BN diagnostic S7"
+    },
+    {
+      "path": "reproduction/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/x3d_bn_audit/core.py",
+      "source_bundle": "AVDF1M_X3D_AASIST_Windows_20261102_001",
+      "source_relative_path": "x3d_bn_audit_20261102_001/code/x3d_bn_audit/core.py",
+      "sha256": "8128a8fa2fba70da9975b4de8a04d3e74e82c7ff13a9e86aaeb4fbb8be4ec5f5",
+      "bytes": 7157,
+      "role": "External runtime loader + original BN diagnostic S7"
+    },
+    {
+      "path": "reproduction/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/x3d_bn_audit/evaluate.py",
+      "source_bundle": "AVDF1M_X3D_AASIST_Windows_20261102_001",
+      "source_relative_path": "x3d_bn_audit_20261102_001/code/x3d_bn_audit/evaluate.py",
+      "sha256": "80376da3b70ef6f29eccf87fc50c78affb6c708e1134b6870b0ab512bf37c4a8",
+      "bytes": 10971,
+      "role": "External runtime loader + original BN diagnostic S7"
+    },
+    {
+      "path": "reproduction/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/x3d_bn_audit/finish.py",
+      "source_bundle": "AVDF1M_X3D_AASIST_Windows_20261102_001",
+      "source_relative_path": "x3d_bn_audit_20261102_001/code/x3d_bn_audit/finish.py",
+      "sha256": "b9158179fd9eac24f7f519455bf53a3bc8d8e4ea5dc64c63fbd30808f88133b0",
+      "bytes": 16888,
+      "role": "External runtime loader + original BN diagnostic S7"
+    },
+    {
+      "path": "reproduction/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/avdf1m_fav_reproduction/__init__.py",
+      "source_bundle": "AVDF1M_X3D_AASIST_Windows_20261102_001",
+      "source_relative_path": "x3d_bn_audit_20261102_001/code/avdf1m_fav_reproduction/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "External runtime loader + original BN diagnostic S7"
+    },
+    {
+      "path": "reproduction/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/avdf1m_fav_reproduction/data_models.py",
+      "source_bundle": "AVDF1M_X3D_AASIST_Windows_20261102_001",
+      "source_relative_path": "x3d_bn_audit_20261102_001/code/avdf1m_fav_reproduction/data_models.py",
+      "sha256": "ba98da5815286ec3320f00063da57fef291b003cf665acfec6f2b47d63f2a77f",
+      "bytes": 5281,
+      "role": "External runtime loader + original BN diagnostic S7"
+    },
+    {
+      "path": "reproduction/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/avdf1m_fav_reproduction/prepare.py",
+      "source_bundle": "AVDF1M_X3D_AASIST_Windows_20261102_001",
+      "source_relative_path": "x3d_bn_audit_20261102_001/code/avdf1m_fav_reproduction/prepare.py",
+      "sha256": "54290e1aa50c2af21ed20f714aeaecaeb1f80e35e1f3d3caa6763ee6698e8dc2",
+      "bytes": 6013,
+      "role": "External runtime loader + original BN diagnostic S7"
+    },
+    {
+      "path": "reproduction/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/FAV/recovered_trainers/train_x3a_x3d_exact.py",
+      "source_bundle": "FAV_AVDF1M_training_code_settings_20261102",
+      "source_relative_path": "FAV/recovered_trainers/train_x3a_x3d_exact.py",
+      "sha256": "f149ceee69adebbe5d475c763fa7ffd266031509dcbd07c3b627660e007cbd6a",
+      "bytes": 46910,
+      "role": "Actual historical source artifact trainers; FAV dependency snapshots are not complete"
+    },
+    {
+      "path": "reproduction/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/FAV/recovered_trainers/train_x3a_aasist_exact.py",
+      "source_bundle": "FAV_AVDF1M_training_code_settings_20261102",
+      "source_relative_path": "FAV/recovered_trainers/train_x3a_aasist_exact.py",
+      "sha256": "78372929c8e34c335c7230efd1a779d39e452da97d4643aa9ccb6b67beb7cbf1",
+      "bytes": 48439,
+      "role": "Actual historical source artifact trainers; FAV dependency snapshots are not complete"
+    },
+    {
+      "path": "reproduction/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/__init__.py",
+      "source_bundle": "FAV_AVDF1M_training_code_settings_20261102",
+      "source_relative_path": "AVDF1M/project/avdf1m_fav_reproduction/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "Actual historical source artifact trainers; FAV dependency snapshots are not complete"
+    },
+    {
+      "path": "reproduction/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/prepare.py",
+      "source_bundle": "FAV_AVDF1M_training_code_settings_20261102",
+      "source_relative_path": "AVDF1M/project/avdf1m_fav_reproduction/prepare.py",
+      "sha256": "54290e1aa50c2af21ed20f714aeaecaeb1f80e35e1f3d3caa6763ee6698e8dc2",
+      "bytes": 6013,
+      "role": "Actual historical source artifact trainers; FAV dependency snapshots are not complete"
+    },
+    {
+      "path": "reproduction/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/data_models.py",
+      "source_bundle": "FAV_AVDF1M_training_code_settings_20261102",
+      "source_relative_path": "AVDF1M/project/avdf1m_fav_reproduction/data_models.py",
+      "sha256": "ba98da5815286ec3320f00063da57fef291b003cf665acfec6f2b47d63f2a77f",
+      "bytes": 5281,
+      "role": "Actual historical source artifact trainers; FAV dependency snapshots are not complete"
+    },
+    {
+      "path": "reproduction/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/runtime.py",
+      "source_bundle": "FAV_AVDF1M_training_code_settings_20261102",
+      "source_relative_path": "AVDF1M/project/avdf1m_fav_reproduction/runtime.py",
+      "sha256": "4ba2bab66641084d8c19f00227677a2a9bbbd4ea83f58e51f496ed862eb95284",
+      "bytes": 4571,
+      "role": "Actual historical source artifact trainers; FAV dependency snapshots are not complete"
+    },
+    {
+      "path": "reproduction/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/train.py",
+      "source_bundle": "FAV_AVDF1M_training_code_settings_20261102",
+      "source_relative_path": "AVDF1M/project/avdf1m_fav_reproduction/train.py",
+      "sha256": "ca8ab67d229ab4303f9574d7cfec7d564cb7d3f7323bad7e9d62efe6ce6e16b1",
+      "bytes": 28189,
+      "role": "Actual historical source artifact trainers; FAV dependency snapshots are not complete"
+    }
+  ]
+}

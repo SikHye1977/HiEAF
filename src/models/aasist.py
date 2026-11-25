@@ -1,14 +1,18 @@
 """Wrapper for an unmodified, pinned official AASIST checkout."""
 from __future__ import annotations
 
-from importlib import import_module
+import hashlib
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
 import sys
+from threading import RLock
 
 import torch
 from torch import Tensor, nn
 
 from .interfaces import ModelOutput
+
+_IMPORT_LOCK = RLock()
 
 
 class AASISTWrapper(nn.Module):
@@ -28,19 +32,29 @@ class AASISTWrapper(nn.Module):
 
 
 def _load_official_model(source_root: Path, model_args: dict) -> nn.Module:
-    """Import `models.AASIST.Model` from the caller-verified vendor checkout."""
+    """Load the verified vendor file without claiming the generic `models` name."""
     source_root = Path(source_root).resolve()
-    if not (source_root / "models" / "AASIST.py").is_file():
+    source = source_root / "models" / "AASIST.py"
+    if not source.is_file():
         raise FileNotFoundError(f"Official AASIST source missing: {source_root}")
-    source_text = str(source_root)
-    inserted = source_text not in sys.path
-    if inserted:
-        sys.path.insert(0, source_text)
-    try:
-        return import_module("models.AASIST").Model(model_args)
-    finally:
-        if inserted:
-            sys.path.remove(source_text)
+    # AASIST.py is self-contained. Never import the script's sibling models.py,
+    # even when it is first on sys.path or already present in sys.modules.
+    identity = hashlib.sha256(str(source).encode("utf-8") + source.read_bytes()).hexdigest()
+    name = "_artifact_emotion_aasist_" + identity
+    with _IMPORT_LOCK:
+        module = sys.modules.get(name)
+        if module is None:
+            spec = spec_from_file_location(name, source)
+            if spec is None or spec.loader is None:
+                raise ImportError(f"Cannot load official AASIST source: {source}")
+            module = module_from_spec(spec)
+            sys.modules[name] = module
+            try:
+                spec.loader.exec_module(module)
+            except BaseException:
+                sys.modules.pop(name, None)
+                raise
+    return module.Model(model_args)
 
 
 def build_aasist(source_root: Path, model_args: dict, *, fake_class_index: int) -> AASISTWrapper:

@@ -1,0 +1,19 @@
+# Preserve the exact bytes of the selected HiEAF experiment sources.
+# Historical run receipts compare source SHA-256 values.
+/.gitattributes -text
+/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/windows_loaders.py -text
+/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/avdf1m_fav_reproduction/__init__.py -text
+/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/avdf1m_fav_reproduction/data_models.py -text
+/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/avdf1m_fav_reproduction/prepare.py -text
+/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/x3d_bn_audit/__init__.py -text
+/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/x3d_bn_audit/core.py -text
+/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/x3d_bn_audit/evaluate.py -text
+/workstation_sources/AVDF1M_X3D_AASIST_Windows_20261102_001/x3d_bn_audit_20261102_001/code/x3d_bn_audit/finish.py -text
+/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/__init__.py -text
+/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/data_models.py -text
+/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/prepare.py -text
+/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/runtime.py -text
+/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/AVDF1M/project/avdf1m_fav_reproduction/train.py -text
+/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/FAV/recovered_trainers/train_x3a_aasist_exact.py -text
+/workstation_sources/FAV_AVDF1M_training_code_settings_20261102/FAV/recovered_trainers/train_x3a_x3d_exact.py -text
+/workstation_sources/SOURCE_MANIFEST.json -text
