@@ -47,8 +47,25 @@ Official installation references:
 
 ## 2. Frozen metadata and paths
 
-Video files alone are insufficient. Copy the supplied `MSOC_metadata_20261126.zip`
-and checksum to Blackwell and extract into a NEW directory. Example paths:
+For the transferred layout under `C:/Users/HP/hsh/deepfake/datasets`, create the
+machine-local configuration automatically (repository root, after environment setup):
+
+```powershell
+& ./.venv/Scripts/python.exe -m scripts.msoc_baseline.configure_data --datasets-dir 'C:/Users/HP/hsh/deepfake/datasets'
+```
+
+This verifies `MSOC_metadata_20261126.zip` against its `.zip.sha256`, extracts
+metadata into a new directory if needed, verifies the frozen metadata pins, and
+finds the dataset roots from paired-eligible sample paths. AVDF1M train/dev probes
+come from the selected subset. It writes UTF-8 `scripts/msoc_baseline/data.local.json`
+without changing media or frozen metadata. Existing different settings are preserved.
+Wrapper directories up to three levels are checked; ambiguous/deeper layouts can
+be specified with `--fav-root`, `--avdf1m-root`, `--pgf-root`, and `--metadata-root`.
+This command does not decode all files or train; run `preflight` next.
+
+Alternatively, for manual configuration, copy the supplied metadata ZIP and
+checksum to Blackwell and extract into a NEW directory. Do not repeat these manual
+steps after the automatic command above succeeds. Example paths:
 
 ```powershell
 Get-FileHash 'E:/incoming/MSOC_metadata_20261126.zip' -Algorithm SHA256
