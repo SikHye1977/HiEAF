@@ -1,0 +1,25 @@
+{
+  "registry": "b92eab4ca6854bfefdd427dbcb1d9811d04ee84915c413233263844f438ac41a",
+  "eligibility": "8a0e1002aada3c30ff62a7186139f32ae3914e028880b46c722379dec13a0d16",
+  "manifests": {
+    "FAV": "fffbc3fd18e7f77b2d62d10228d329c28f496ae7289b96b035752d926fe11907",
+    "AVDF1M": "5b602b91ca91c8fcd316801ddffb0e9b641ea5bf889afc0f610dc0f997cbd826",
+    "PGF": "d10cfb9a7bdf35996161fa1a484e9d85306c69304f81cf2795685c5a6a93c0e1"
+  },
+  "subsets": {
+    "train": "bf2aa3e888aba60220fa7df5cccf2cf8c1b49245d22164fbc03f6a6b46c80887",
+    "dev": "fbbcfe4449978023c4f5dd7f83262f5a5e44ce8332fb9c9b089aa03d843dcbfa"
+  },
+  "pgf": {
+    "real": {
+      "path": "D:\\datasets\\PolyGlotFake\\json_file\\real_json_file\\all_real_video.json",
+      "sha256": "be3ebf572c00ce4a751804ca2c6d926dc7fb128a84c978c7bcf212bb4ad98924",
+      "key": "videos"
+    },
+    "fake": {
+      "path": "D:\\datasets\\PolyGlotFake\\json_file\\fake_Json_file\\all_fake_video.json",
+      "sha256": "e8ae23b0e75d500e1b0cad8f107b3112626ab03400518dbde26d41820eab8b86",
+      "key": "video"
+    }
+  }
+}

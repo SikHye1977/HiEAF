@@ -1,0 +1,8 @@
+{
+  "metadata_root": "E:/MSOC_metadata",
+  "dataset_roots": {
+    "FAV": "E:/datasets/FakeAVCeleb_v1.2",
+    "AVDF1M": "E:/datasets/AV-Deepfake1M",
+    "PGF": "E:/datasets/PolyGlotFake"
+  }
+}

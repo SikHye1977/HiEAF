@@ -1,0 +1,2 @@
+# Additional dependency; use the existing workspace .venv for everything else.
+python_speech_features==0.6

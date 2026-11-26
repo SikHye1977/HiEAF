@@ -1,0 +1,2 @@
+# Preserve source/checksum bytes across Windows checkouts.
+* -text

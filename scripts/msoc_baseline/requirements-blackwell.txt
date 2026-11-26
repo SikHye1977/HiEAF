@@ -1,0 +1,8 @@
+# Python 3.10; torch is installed separately from the CUDA 12.8 index.
+numpy==1.26.4
+scipy==1.14.1
+av==12.3.0
+opencv-python-headless==4.10.0.84
+scikit-learn==1.5.2
+python_speech_features==0.6
+PyYAML==6.0.2
