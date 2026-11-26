@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 $python = Join-Path $root '.venv/Scripts/python.exe'
 if (-not (Test-Path -LiteralPath $python)) { throw 'Workspace .venv is required.' }
-& $python -m pip install --no-deps -r (Join-Path $PSScriptRoot 'requirements.txt')
+& $python -m pip install --index-url https://pypi.org/simple --no-deps -r (Join-Path $PSScriptRoot 'requirements.txt')
 if ($LASTEXITCODE -ne 0) { throw 'Dependency install failed.' }
 $snapshot = Join-Path $PSScriptRoot 'upstream'
 if (-not (Test-Path -LiteralPath $snapshot)) {

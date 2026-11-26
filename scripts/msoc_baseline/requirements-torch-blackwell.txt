@@ -1,0 +1,10 @@
+# Runtime Requires-Dist from the official torch 2.7.1+cu128 cp310 win_amd64 wheel.
+# Install from PyPI before installing Torch with --no-deps from the CUDA index.
+# Scope: CPython 3.10 on Windows x64, without optional Torch extras.
+# The setup ends with pip check to validate the installed wheel's requirements.
+filelock
+typing-extensions>=4.10.0
+sympy>=1.13.3
+networkx
+jinja2
+fsspec

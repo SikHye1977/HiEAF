@@ -25,6 +25,15 @@ install HiEAF models or run a dataset experiment. A compatible NVIDIA driver
 is required. Blackwell hardware cannot be tested from the source PC; the
 destination GPU check and preflight must pass before training.
 
+The installer updates pip to 25.3 in this checkout only. General dependencies
+come from PyPI; `requirements-torch-blackwell.txt` lists the official Windows
+Python 3.10 Torch wheel's runtime requirements. Only the pinned CUDA Torch wheel
+is installed from the PyTorch index, with `--no-deps` after those requirements
+have been resolved. This avoids trying to build general packages using the
+CUDA index alone. `pip check` verifies the complete installed environment before
+the GPU check. After an interrupted dependency download, rerun the same setup;
+there is no need to delete the `.venv` or pip cache.
+
 Official installation references:
 - https://pytorch.org/get-started/previous-versions/#v271
 - https://pytorch.org/blog/pytorch-2-7/
