@@ -16,6 +16,10 @@ if (-not (Test-Path -LiteralPath $snapshot)) {
 }
 Push-Location $root
 try {
-    & $python -c 'from scripts.msoc_baseline.model import verify_upstream; print("Verified official MSOC:", verify_upstream())'
+    # Keep embedded Python quotes intact on Windows PowerShell 5.1.
+@'
+from scripts.msoc_baseline.model import verify_upstream
+print("Verified official MSOC:", verify_upstream())
+'@ | & $python -
     if ($LASTEXITCODE -ne 0) { throw 'Official source verification failed.' }
 } finally { Pop-Location }

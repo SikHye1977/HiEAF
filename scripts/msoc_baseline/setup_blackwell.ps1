@@ -9,8 +9,19 @@ if (-not (Test-Path -LiteralPath $python)) {
     if ($LASTEXITCODE -ne 0) { throw 'Install Python 3.10 (Windows launcher) first.' }
 }
 # Refuse to replace an existing experiment's Torch installation.
-& $python -c 'import importlib.util, sys; s=importlib.util.find_spec("torch"); v=__import__("torch").__version__ if s else None; print("Existing torch:", v); sys.exit(0 if v is None or v == "2.7.1+cu128" else 1)'
-if ($LASTEXITCODE -ne 0) { throw 'Existing Torch differs. Use a separate checkout/.venv; do not modify a HiEAF environment.' }
+# Send source over stdin: Windows PowerShell 5.1 strips embedded quotes in -c arguments.
+@'
+import importlib.util
+import sys
+
+spec = importlib.util.find_spec("torch")
+version = __import__("torch").__version__ if spec else None
+print("Existing torch:", version)
+sys.exit(10 if version is not None and version != "2.7.1+cu128" else 0)
+'@ | & $python -
+$torchCheckExitCode = $LASTEXITCODE
+if ($torchCheckExitCode -eq 10) { throw 'Existing Torch differs. Use a separate checkout/.venv; do not modify a HiEAF environment.' }
+if ($torchCheckExitCode -ne 0) { throw 'Could not check existing Torch. See the Python error above; no packages have been installed.' }
 & $python -m pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu128
 if ($LASTEXITCODE -ne 0) { throw 'CUDA 12.8 PyTorch installation failed.' }
 & $python -m pip install -r (Join-Path $PSScriptRoot 'requirements-blackwell.txt')
