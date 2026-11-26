@@ -34,6 +34,13 @@ CUDA index alone. `pip check` verifies the complete installed environment before
 the GPU check. After an interrupted dependency download, rerun the same setup;
 there is no need to delete the `.venv` or pip cache.
 
+Official source archives are exported with Git line-ending conversion disabled
+for that command only. All 64 files must match `upstream.lock.json` byte for byte.
+If an earlier download differs (for example, Windows LF-to-CRLF conversion),
+setup verifies a fresh download first, preserves the old `upstream` under
+`reports/msoc_setup/source-*/previous_upstream`, and installs the verified copy.
+Global Git settings and the official checksums are unchanged.
+
 Official installation references:
 - https://pytorch.org/get-started/previous-versions/#v271
 - https://pytorch.org/blog/pytorch-2-7/
